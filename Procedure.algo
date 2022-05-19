@@ -1,0 +1,25 @@
+PROCEDURE dot_product(V1,V2 : ARRAY_OF FLOAT[n:INTEGER];)
+VAR
+    i:INTEGER;
+    ps:FLOAT;
+BEGIN
+    FOR i FROM 0 TO n STEP 1 DO
+        
+            ps:=ps+V1[i]*V2[i];
+    END_FOR
+    Write(ps);
+    
+END
+ALGORITHM ProcesureAlgo
+VAR
+    arr1,arr2 : ARRAY_OF FLOAT[10];
+    i,j: INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        FOR j FROM 0 TO arr2.length-1 STEP 1 DO
+            IF (dot_product(arr1[i],arr2[j])=0) THEN
+                Write("the vectors are orthogonals", arr1[i],arr2[j])
+            END_IF
+        END_FOR
+    END_FOR
+END
