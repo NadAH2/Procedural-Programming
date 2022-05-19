@@ -1,9 +1,9 @@
-FUNCTION dot_product(V1,V2 : ARRAY_OF FLOAT[]) : FLOAT
+FUNCTION dot_product(V1,V2 : ARRAY_OF FLOAT[5]) : FLOAT
 VAR
     i:INTEGER:=0;
     ps:FLOAT;
 BEGIN
-    FOR i FROM 0 TO n STEP 1  DO
+    FOR i FROM 0 TO 4 STEP 1  DO
         
             ps:=ps+V1[i]+V2[i];
         
@@ -12,13 +12,12 @@ BEGIN
 END
 ALGORITHM FunctionDP
 VAR
-    arr1,arr2 : ARRAY_OF INTEGER[10];
-    i,j: INTEGER:=0;
+    R : ARRAY_OF INTEGER[4][5];
+    i: INTEGER:=0;
     ps:FLOAT;
-BEGIN
-    ps:=dot_product(arr1, arr2) ;
-    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
-        FOR j FROM 0 TO arr2.length-1 STEP 1 DO
+BEGIN  
+    FOR i FROM 0 TO 3 STEP 2  DO
+        ps:=dot_product(R[i], R[i+1]) ;
             IF (ps=0) THEN
             Write("the two vectors are ortoghonals")
             END_IF
